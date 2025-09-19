@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Artisan Hub - Discover</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4d19e6",
+            "background-light": "#f6f6f8",
+            "background-dark": "#151121",
+          },
+          fontFamily: {
+            "display": ["Spline Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-3 text-gray-900 dark:text-white" href="#">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<span class="text-xl font-bold">Artisan </span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="code.html">Home</a>
+<a class="text-sm font-bold text-primary" href="#">Discover</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="upload.html">Create</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="profile.html">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+<svg class="h-5 w-5 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</span>
+<input class="w-full max-w-xs pl-10 pr-4 py-2 rounded-full bg-gray-200 dark:bg-gray-800 border border-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400" placeholder="Search artists or categories" type="search"/>
+</div>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6zTpemUWgvIVj74Pjw9QJhuwBNzOyCVeWVh-ZF9dxQzC7l3mXYLRj8nLLr6O6NLAZM-gi6T864XFFwo2FtxTgLaGSrIDpsakdpT8k2ITALO2vuaBWyH9SuPhOe1NOsRNkObIGhjJOkkPQL2SHZBN1v-GEwlR_hS2P4Or3-onMtZNgOZmutWeuJ-gzGv_92BjfhOu_H31C2JJC5WpNG6sYpdZWrNfT7NTTlP5hw6MUdP1zGDOZpdircd7kPk1KvX_STdCy2c_s6xw");' ></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-6 py-12">
+<div class="max-w-7xl mx-auto">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-12">Discover Categories</h1>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<a class="group relative block rounded-xl overflow-hidden aspect-[4/5] transition-transform duration-300 ease-in-out hover:scale-105" href="#">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmVzml6undU9hEL9QMFaZl0upwge1TvOvkoszb75c5Kr19k7uwddRn5q_zsK2pdMSxybWuuZMSBGTmjMlbUy6NDvOEfw8KlobDxO1GW4H4JgMY7LAJyYrL_SgFnkH_C3KY-4zuy3EyvQ7bRPzLlnvC_PeysdTHAkuKNh0N52Ie9G91tXNp3eNFJQXTF4Ny6AHayEuCyln1rZ3jzu02MYYqVQaQ-7J11A31aYtnXUm-GI5Yf-HE3QuwgO1R_ZTanzH8eu2ix8Nz_f8");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h2 class="text-white text-2xl font-bold">Paintings</h2>
+</div>
+</a>
+<a class="group relative block rounded-xl overflow-hidden aspect-[4/5] transition-transform duration-300 ease-in-out hover:scale-105" href="#">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBORbCb4eqMSJ2ZOyKUrSaszdr8vrFTeHDlqjt1_uhiLeWqR0SXHZBTFJ_K44Vza_ImtXLREVNfYNJjwJ1PYGqzT339660BP9TYdWcCqxg8yA0RGevJ40lkrsBytK0XeE4vO9uYfQZN8w0XSFdLXwkeP70aNYxOW85kbSYJsfZ8-2BbeQ3tOPUrBUUcB9eWvCRwihCCtyFn7CmXMrRkwuIIydDuBzrkn5F7joAefibcKqwYu-bfT3icglG7zz9NIibMDlGeXXILlBk");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h2 class="text-white text-2xl font-bold">Jewellery</h2>
+</div>
+</a>
+<a class="group relative block rounded-xl overflow-hidden aspect-[4/5] transition-transform duration-300 ease-in-out hover:scale-105" href="#">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAFa9R9rTM8vc60n6gZkoR33veEkMnyoQNlwMCRRyPNqEuKtxjbsc0IgELj6-_hBxK4OS5asTORc9xDAp41eKSWWGeGiKaxevlyq_sw83PGbMCLgcATL_Xm7BoDWUg9tvRPrlrAzAG4uquofn1_FTlrPtVmK8QisFAISeD5hyVpaCYw5P6EAAiexHIzNoDurOfriCyE-y2g1mj_YfWpW_MZV3_yYxaZ82bKQH0iU6zuOT663AejMfkvrz8uDmeHEqWZOfRcuqU4_N0");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h2 class="text-white text-2xl font-bold">Embroidery</h2>
+</div>
+</a>
+<a class="group relative block rounded-xl overflow-hidden aspect-[4/5] transition-transform duration-300 ease-in-out hover:scale-105" href="#">
+<div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-in-out group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCL5-kJSR6DXXS__v0_rTT3P0nN9EAi6x6Z5xLukmcbWHC1JRxruOqLb9_NLR2a2NqjaMC-NWibzA5zZKnaheDr8sDCfWT0YrEy7hjh_Kpexl38G0DzShgiF8q8Nokn7y0O40LWkXtf9VtngrIvVYpv3T-lImwP8IGrqg02A5QYkrBdBcv_hA1MccRuWxTpGzBGid7coe9XQh-A_QOapVp6Icb3v1UEEkJQvpv9UIRnewoBmxmH2Ta2VfjpwynN9tAcRd-xmKRu0cg");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h2 class="text-white text-2xl font-bold">Books</h2>
+</div>
+</a>
+</div>
+</div>
+</main>
+<footer class="bg-gray-100 dark:bg-gray-900/50 mt-16">
+<div class="container mx-auto px-6 py-8">
+<div class="flex flex-col items-center justify-between md:flex-row gap-6">
+<div class="flex items-center gap-3 text-gray-900 dark:text-white">
+<svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<span class="text-lg font-bold">Artisan Hub</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8">
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+<div class="mt-8 border-t border-gray-200 dark:border-gray-800 pt-6 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2024 Artisan Hub. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>

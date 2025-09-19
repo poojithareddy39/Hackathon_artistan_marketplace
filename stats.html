@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artisan Stats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-beige-100 { background-color: #f5f5dc; } /* custom beige */
+  </style>
+</head>
+<body class="min-h-screen font-display text-gray-800 dark:text-gray-200 
+bg-gradient-to-br from-beige-100 via-white to-beige-200 
+dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">📊 Artisan Marketplace Stats</h1>
+
+    <!-- Stats Grid -->
+    <div id="statsContainer" class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <!-- Stats will be injected -->
+    </div>
+
+    <!-- Back Button -->
+    <div class="text-center mt-10">
+      <a href="code.html"
+        class="px-6 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+        ⬅ Back to Home
+      </a>
+    </div>
+    <!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <div class="flex justify-around">
+      <a href="code.html" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+        <span>🏠</span>
+        <span class="text-xs">Home</span>
+      </a>
+      <a href="#" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+        <span>🔍</span>
+        <span class="text-xs">Explore</span>
+      </a>
+      <a href="upload.html" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+        <span>➕</span>
+        <span class="text-xs">Sell</span>
+      </a>
+      <a href="#" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+        <span>📦</span>
+        <span class="text-xs">Orders</span>
+      </a>
+      <a href="profile.html" class="flex flex-col items-center py-2 text-indigo-600">
+        <span>👤</span>
+        <span class="text-xs">Profile</span>
+      </a>
+    </div>
+    
+  </nav>
+  
+  </div>
+
+  <script>
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    const statsContainer = document.getElementById("statsContainer");
+    statsContainer.innerHTML = `
+      <div class="bg-beige-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+        <h2 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400">${users.length}</h2>
+        <p class="text-gray-700 dark:text-gray-300">Total Users</p>
+      </div>
+      <div class="bg-beige-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+        <h2 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400">${products.length}</h2>
+        <p class="text-gray-700 dark:text-gray-300">Products Listed</p>
+      </div>
+      <div class="bg-beige-100 dark:bg-gray-800 p-6 rounded-xl shadow">
+        <h2 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400">${orders.length}</h2>
+        <p class="text-gray-700 dark:text-gray-300">Total Orders</p>
+      </div>
+    `;
+  </script>
+</body>
+</html>

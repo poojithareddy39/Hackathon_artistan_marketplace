@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+
+<div class="max-w-md mx-auto p-6 pb-24">
+  <!-- Page Title -->
+  <div class="text-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">List Your Product</h1>
+    
+    <p class="text-gray-6000 dark:text-gray-900">Upload your artwork and start selling.</p>
+  </div>
+
+  <!-- Upload Form -->
+  <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow">
+    <!-- Product Name -->
+    <input type="text" id="productName" placeholder="Product Name"
+      class="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm mb-3" />
+
+    <!-- Product Photo -->
+    <input type="file" id="productPhoto" accept="image/*"
+      class="mb-3 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0 file:text-sm file:font-semibold
+      file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+
+    <!-- Product Description -->
+    <textarea id="productDesc" rows="3" placeholder="Description"
+      class="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm mb-3"></textarea>
+
+    <!-- Product Price -->
+    <input type="number" id="productPrice" placeholder="Price (₹)" min="0"
+      class="w-full p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm mb-3" />
+
+    <!-- AI Button -->
+    <button id="aiBtn"
+      class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow mb-3">
+      ✨ Refine with AI
+    </button>
+
+    <!-- AI Result -->
+    <div id="aiResult" class="mt-3"></div>
+
+    <!-- Submit -->
+    <button id="submitBtn"
+      class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow">
+      ✅ Submit Product
+    </button>
+  </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+  <div class="flex justify-around">
+    <a href="code.html" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+      <span>🏠</span>
+      <span class="text-xs">Home</span>
+    </a>
+    <a href="#" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+      <span>🔍</span>
+      <span class="text-xs">Explore</span>
+    </a>
+    <a href="upload.html" class="flex flex-col items-center py-2 text-indigo-600">
+      <span>➕</span>
+      <span class="text-xs">Sell</span>
+    </a>
+    <a href="#" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+      <span>📦</span>
+      <span class="text-xs">Orders</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center py-2 text-gray-600 dark:text-gray-300 hover:text-indigo-500">
+      <span>👤</span>
+      <span class="text-xs">Profile</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ✅ Script Section -->
+<script>
+  const aiBtn = document.getElementById("aiBtn");
+  const aiResult = document.getElementById("aiResult");
+  const submitBtn = document.getElementById("submitBtn");
+  const fileInput = document.getElementById("productPhoto");
+
+  // ✨ Random AI marketing phrases
+  const aiTemplates = [
+    (name, desc, price) => [
+      `✨ ${name} – ${desc}, crafted with passion.`,
+      `Priced at just ₹${price}, this masterpiece brings tradition to your modern space.`,
+      `Perfect for gifting or adding charm to your collection.`
+    ],
+    (name, desc, price) => [
+      `Discover the beauty of ${name}, ${desc}.`,
+      `Only ₹${price} – a timeless craft made for you.`,
+      `Support local artisans and own a piece of heritage.`
+    ],
+    (name, desc, price) => [
+      `Bring home ${name} – ${desc}.`,
+      `Special price: ₹${price}.`,
+      `Each piece tells a story of culture, art, and dedication.`
+    ]
+  ];
+
+  // ✨ Refine with AI (mock multi-line)
+  aiBtn.addEventListener("click", () => {
+    const name = document.getElementById("productName").value || "Handcrafted Item";
+    const desc = document.getElementById("productDesc").value || "Unique handmade product";
+    const price = document.getElementById("productPrice").value || "—";
+
+    // Pick a random template
+    const captions = aiTemplates[Math.floor(Math.random() * aiTemplates.length)](name, desc, price);
+
+    // Render multiple lines
+    aiResult.innerHTML = `
+      <div class="p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+        <p class="text-sm text-gray-700 dark:text-gray-300">Refined Image Preview (placeholder)</p>
+        ${captions.map(line => `<p class="mt-1 text-sm italic text-gray-500">"${line}"</p>`).join("")}
+      </div>
+    `;
+  });
+
+  // ✅ Submit Product (with Base64 photo)
+  submitBtn.addEventListener("click", () => {
+    const name = document.getElementById("productName").value;
+    const desc = document.getElementById("productDesc").value;
+    const price = document.getElementById("productPrice").value;
+
+    if (!name || !desc || !price || fileInput.files.length === 0) {
+      alert("⚠️ Please fill all fields and upload an image.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const photoData = e.target.result; // Base64 string
+
+      const product = { name, desc, price, photo: photoData };
+
+      let products = JSON.parse(localStorage.getItem("products")) || [];
+      products.push(product);
+      localStorage.setItem("products", JSON.stringify(products));
+
+      alert("✅ Product submitted successfully!");
+      window.location.href = "profile.html";
+    };
+
+    reader.readAsDataURL(fileInput.files[0]); // Convert image to Base64
+  });
+</script>
+
+
+</body>
+</html>
